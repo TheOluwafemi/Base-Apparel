@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: inherit;
+    }
+
+    body {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 16px;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .header {
+      display: none;
+    }
+
+    .hero-mobile {
+      display: none;
+    }
+
+    .block {
+      background-image: url('./images/bg-pattern-desktop.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 4rem 12rem 4rem 10rem;
+    }
+
+    .block__header {
+      margin-bottom: 8rem;
+    }
+
+    .content {
+      color: hsl(0, 36%, 70%);
+      line-height: 2;
+    }
+
+    .big__text {
+      text-transform: uppercase;
+      display: block;
+      font-size: 60px;
+      letter-spacing: 12px;
+      line-height: 1.2;
+    }
+
+    .big__text--margin {
+      margin-bottom: 2rem;
+    }
+
+    .big__text--pink {
+      color: hsl(0, 36%, 70%);
+      font-weight: 300;
+    }
+
+    .big__text--black {
+      font-weight: 400;
+      color: hsl(0, 6%, 24%);
+    }
+
+    .hero img {
+      height: 100%;
+    }
+
+    form {
+      margin-top: 3rem;
+    }
+
+    form input[type=email] {
+      border: 2px solid hsl(0, 36%, 70%);
+      width: 80%;
+      font-size: 16px;
+      float: left;
+      padding: 16px;
+      border-radius: 30px;
+      outline: none;
+    }
+
+    ::-webkit-input-placeholder {
+      /* Edge */
+      color: hsl(0, 36%, 70%);
+    }
+
+    :-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: hsl(0, 36%, 70%);
+    }
+
+    ::placeholder {
+      color: hsl(0, 36%, 70%);
+    }
+
+    form button {
+      float: left;
+      background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+      color: white;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      width: 20%;
+      border-radius: 30px;
+      width: 18%;
+      padding: 14.7px;
+      margin-left: -60px;
+      transition: box-shadow .2s ease-in-out;
+      outline: none;
+    }
+
+    form button:hover {
+      background: hsl(0, 80%, 86%);
+      box-shadow: 0px 0px 24px hsl(0, 80%, 86%);
+    }
+
+    form ::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .email-error {
+      border-color: hsl(0, 93%, 68%) !important;
+    }
+
+    .error-icon {
+      float: left;
+      margin-left: -110px;
+      padding: 12px;
+    }
+
+    .no-show {
+      display: none;
+    }
+
+    .error {
+      color: hsl(0, 93%, 68%);
+    }
+
+    footer {
+      padding: .7rem
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    @media only screen and (max-width: 375px) {
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .header {
+        display: block;
+        padding: 1.5rem;
+      }
+
+      .hero-mobile {
+        display: block;
+      }
+
+      .hero-mobile img {
+        width: 100%;
+      }
+
+      .block {
+        background-image: none;
+        padding: 2rem;
+      }
+
+      .block__header {
+        display: none;
+      }
+
+      .hero {
+        display: none;
+      }
+
+      .content {
+        text-align: center;
+      }
+
+      .big__text {
+        text-align: center;
+      }
+
+      form button {
+        width: 24%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <header class="header">
+      <img src="./images/logo.svg" alt="base apparel logo">
+    </header>
+
+    <div class="hero-mobile">
+      <img src="./images/hero-mobile.jpg" alt="hreo image mobile">
+    </div>
+
+    <div class="block">
+
+      <div class="block__header">
+        <img src="./images/logo.svg" alt="base apparel logo">
+      </div>
+
+      <div class="content">
+        <span class="big__text big__text--pink">We're </span>
+        <span class="big__text big__text--black big__text--margin"> coming <br /> soon</span>
+
+        Hello fellow shoppers! We're currently building our new fashion store.
+        Add your email below to stay up-to-date with announcements and our launch deals.
+
+        <form class="example" name="emailForm" onsubmit="validateForm(event)">
+          <input class="emailField" name='email' type="email" placeholder="Email Address">
+          <img class="error-icon no-show" src="./images/icon-error.svg" alt="error icon">
+          <button type="submit"><img src="./images/icon-arrow.svg" alt="icon arrow"></button>
+          <div class="error" id="emailErr"></div>
+        </form>
+
+
+      </div>
+
+    </div>
+
+    <div class="hero">
+      <img src="./images/hero-desktop.jpg" alt="cover image">
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/TheOluwafemi">TheOluwafemi</a>.
+    </p>
+  </footer>
+
+  <script>
+    // Defining a function to display error message
+    function printError(elemId, hintMsg) {
+      document.getElementById(elemId).innerHTML = hintMsg;
+    }
+
+    function validateForm(e) {
+      e.preventDefault();
+      // Retrieving the values of form elements 
+      let email = document.emailForm.email.value;
+      let emailField = document.querySelector('.emailField');
+      let errorIcon = document.querySelector('.error-icon');
+      let regex = /^\S+@\S+\.\S+$/;
+      let emailErr = true;
+
+      // Validate email address
+      if (email == "") {
+        printError("emailErr", "Please enter your email address");
+        emailField.classList.add('email-error');
+        errorIcon.classList.remove('no-show');
+      } else if (regex.test(email) === false) {
+        // Regular expression for basic email validation
+        printError("emailErr", "Please enter a valid email address");
+        emailField.classList.add('email-error');
+        errorIcon.classList.remove('no-show');
+      } else {
+        printError("emailErr", "");
+        emailErr = false;
+        emailField.classList.remove('email-error');
+        errorIcon.classList.add('no-show');
+      }
+    }
+  </script>
+</body>
+
+</html>
