@@ -11,7 +11,7 @@ body {
 
 .container {
   display: flex;
-  height: 100Vh;
+  height: 100%;
 }
 
 .header {
